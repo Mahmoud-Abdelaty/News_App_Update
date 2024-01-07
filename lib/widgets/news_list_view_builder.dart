@@ -33,7 +33,6 @@ class _NewsListviewBuilderState extends State<NewsListviewBuilder> {
         switch (snapshot.connectionState) {
           case ConnectionState.none:
           case ConnectionState.waiting:
-            print('w ${snapshot.data}');
             return SliverList(
               delegate: SliverChildBuilderDelegate(
                 (context, index) => LoadingPage(),
@@ -43,7 +42,6 @@ class _NewsListviewBuilderState extends State<NewsListviewBuilder> {
           case ConnectionState.active:
           case ConnectionState.done:
             if (snapshot.data == null || snapshot.data! == []) {
-              print('E ${snapshot.data}');
               return const SliverFillRemaining(
                 hasScrollBody: false,
                 child: Center(
@@ -63,7 +61,6 @@ class _NewsListviewBuilderState extends State<NewsListviewBuilder> {
                 ),
               );
             } else {
-              print('D ${snapshot.data}');
               return NewsListview(
                   articles: snapshot.data! as List<ArticleModel>);
             }

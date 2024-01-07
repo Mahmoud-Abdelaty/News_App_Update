@@ -35,7 +35,9 @@ class NewsCard extends StatelessWidget {
             height: 12,
           ),
           Text(
-            articleModel.title ?? '',
+            articleModel.title == '[Removed]'
+                ? 'Not Found'
+                : articleModel.title ?? '',
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             style: const TextStyle(
@@ -48,7 +50,9 @@ class NewsCard extends StatelessWidget {
             height: 8,
           ),
           Text(
-            articleModel.subTitle ?? '',
+            articleModel.subTitle == '[Removed]'
+                ? 'Not Found'
+                : articleModel.subTitle ?? '',
             maxLines: 2,
             style: const TextStyle(color: Colors.grey, fontSize: 14),
           )

@@ -18,6 +18,7 @@ class _NewsListviewCategoryBuilderState
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          iconTheme: const IconThemeData(color: Colors.amber),
           title: Text(
             widget.categoryName,
             style: const TextStyle(
