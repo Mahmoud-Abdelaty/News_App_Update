@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:news_app/constant/variables.dart';
 import 'package:news_app/models/article_model.dart';
 
 class NewsServices {
@@ -10,7 +11,7 @@ class NewsServices {
       {required String categoryName}) async {
     try {
       Response response = await dio.get(
-          'https://newsapi.org/v2/top-headlines?apiKey=500f21c485414a82a58ea786dd68d504&country=us&category=$categoryName');
+          'https://newsapi.org/v2/top-headlines?apiKey=$yourApiKey&country=us&category=$categoryName');
       Map<String, dynamic> jsonData = response.data;
       List<dynamic> articles = jsonData["articles"];
 
