@@ -5,12 +5,13 @@ class ArticleModel {
   final String? subTitle;
   final String? url;
 
-  ArticleModel(
-      {required this.source,
-      required this.image,
-      required this.title,
-      required this.subTitle,
-      required this.url});
+  ArticleModel({
+    required this.source,
+    required this.image,
+    required this.title,
+    required this.subTitle,
+    required this.url,
+  });
 
   factory ArticleModel.fromJson(Map<String, dynamic> json) {
     return ArticleModel(
